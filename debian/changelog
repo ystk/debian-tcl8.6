@@ -1,0 +1,193 @@
+tcl8.6 (8.6.1-6) unstable; urgency=low
+
+  * Upload into unstable.
+
+ -- Sergei Golovan <sgolovan@debian.org>  Sat, 08 Mar 2014 08:54:46 +0400
+
+tcl8.6 (8.6.1-5) experimental; urgency=low
+
+  * Restored tcl8.6.prerm script which removes alternative for
+    /usr/bin/tclsh8.6.
+  * Added ${misc:Depends} substvar for libtcl8.6-dbg package.
+  * Bumped standards version to 3.9.5.
+
+ -- Sergei Golovan <sgolovan@debian.org>  Fri, 10 Jan 2014 12:48:44 +0400
+
+tcl8.6 (8.6.1-4) experimental; urgency=low
+
+  * Added the tcl8.6-dbg package with libtcl8.6 debug symbols in it.
+
+ -- Sergei Golovan <sgolovan@debian.org>  Sat, 05 Oct 2013 10:56:25 +0400
+
+tcl8.6 (8.6.1-3) experimental; urgency=low
+
+  * Added zlib1g-dev to the tcl8.6-dev dependencies, because some of the
+    packages (e.g. tcl-signal) use $TCL_LIBS which in turn requires zlib
+    to be linked.
+
+ -- Sergei Golovan <sgolovan@debian.org>  Fri, 27 Sep 2013 11:37:37 +0400
+
+tcl8.6 (8.6.1-2) experimental; urgency=low
+
+  * Renamed the development package back to tcl8.6-dev after a discussion
+    on debian-devel mailing list.
+
+ -- Sergei Golovan <sgolovan@debian.org>  Wed, 25 Sep 2013 21:56:58 +0400
+
+tcl8.6 (8.6.1-1) experimental; urgency=low
+
+  * New upstream release.
+
+ -- Sergei Golovan <sgolovan@debian.org>  Tue, 24 Sep 2013 20:08:15 +0400
+
+tcl8.6 (8.6.0-4) experimental; urgency=low
+
+  * Removed unnecessary patches to init.tcl and tclPort.h.
+  * Change build specs, libs and headers via a patch to tclConfig.sh.in
+    instead of filtering the generated tclConfig.sh to make changes more
+    visible.
+  * Make libtcl8.6-dev depend on tcl8.6 for better backward compatibility.
+
+ -- Sergei Golovan <sgolovan@debian.org>  Mon, 19 Aug 2013 21:23:07 +0400
+
+tcl8.6 (8.6.0-3) experimental; urgency=low
+
+  * Renamed tcl8.6-lib and tcl8.6-dev into libtcl8.6 and libtcl8.6-dev
+    because it's much more common name convention.
+  * Fixed debian/watch script because tcl-core archive is used as a source
+    tarball.
+  * Fixed maintainer's 'name'.
+  * Added dpkg-dev to the libtcl8.6-dev dependencies because tclConfig.sh
+    calls dpkg-architecture.
+
+ -- Sergei Golovan <sgolovan@debian.org>  Wed, 31 Jul 2013 11:05:37 +0400
+
+tcl8.6 (8.6.0-2) experimental; urgency=low
+
+  * Added to tcl8.6-lib dependencies to ensure the OS-wide timezone data
+    are used in the [clock] command.
+  * Bumped debhelper compatibility version to 9.
+  * Added multi-arch support. This includes splitting out the tcl8.6-lib
+    library package with libtcl8.6.so and tclConfig.sh moved into a
+    multi-archified location.
+  * Recreated /usr/lib/tcl8.6/tclConfig.sh and /usr/lib/tcl8.6/tclooConfig.sh
+    for backward compatibility (intend to remove in the future).
+  * Removed .0 suffix from the libtcl8.6.so library in order to remove
+    unnecessary diversions from the upstream practice, provided the symlink
+    for backward compatibility (intend to remove in the future).
+  * Switched to calculating dependency on tcl8.6-lib via a symbols table.
+  * Don't use the alternatives mechanism for selecting /usr/bin/tclsh. This
+    package ships only /usr/bin/tclsh8.6. The tcltk-defaults package provides
+    the necessary symlink. This also means that tcl8.6 does no longer provide
+    the tclsh virtual package.
+  * Moved the old changelogs to the tcl8.6-doc package to reduce size of the
+    tcl8.6 one.
+  * Fixed clean target in debian/rules.
+  * Bumped standards version to 3.9.4.
+
+ -- Sergei Golovan <sgolovan@debian.org>  Thu, 11 Jul 2013 21:15:09 +0400
+
+tcl8.6 (8.6.0-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Sergei Golovan <sgolovan@debian.org>  Thu, 20 Dec 2012 20:24:41 +0400
+
+tcl8.6 (8.6.0~b3-1) experimental; urgency=low
+
+  * New upstream beta release.
+
+ -- Sergei Golovan <sgolovan@debian.org>  Thu, 20 Sep 2012 09:04:01 +0400
+
+tcl8.6 (8.6.0~b2-2) experimental; urgency=low
+
+  * Install library(3tcl), packagens(3tcl), pkgMkIndex(3tcl) and safe(3tcl)
+    manpages despite of upstream renaming them because they are referenced
+    from the other pages.
+  * Don't break the build if tdbc headers aren't in the tarball (helps
+    to build the package using sources from the upstream repository).
+  * Removed Chris Waters wrom the uploaders list (closes: #664113).
+  * Renamed suggested dependency to tcl-tclreadline.
+  * Switched to 3.0 (quilt) source package format.
+  * Bumped debhelper compatibility version to 8.
+  * Added hardening build flags using dpkg-buildflags.
+  * Bumped standards version to 3.9.3.
+
+ -- Sergei Golovan <sgolovan@debian.org>  Mon, 28 May 2012 18:13:35 +0400
+
+tcl8.6 (8.6.0~b2-1) experimental; urgency=low
+
+  * New upstream beta release.
+
+ -- Sergei Golovan <sgolovan@debian.org>  Mon, 08 Aug 2011 23:11:31 +0400
+
+tcl8.6 (8.6.0~b2~rc4-1) experimental; urgency=low
+
+  * New upstream beta release candidate.
+
+ -- Sergei Golovan <sgolovan@debian.org>  Sun, 07 Aug 2011 12:28:21 +0400
+
+tcl8.6 (8.6.0~b2~rc0-1) experimental; urgency=low
+
+  * New upstream beta release candidate.
+  * Moved /usr/share/tcltk/tcl8.6/tclConfig.sh back to the /usr/lib/tcl8.6
+    directory because it is architecture dependent.
+  * Added ${misc:Depends} to debian/control.
+  * Added README.source which explains how to apply quilt patches.
+  * Bumped standards version to 3.9.2.
+
+ -- Sergei Golovan <sgolovan@debian.org>  Thu, 21 Jul 2011 10:30:26 +0400
+
+tcl8.6 (8.6.0~b1-4) experimental; urgency=low
+
+  * Removed tcl8.6-tdbc package because TDBC is to be packaged separately.
+  * Added zlib1g-dev to build dependencies to make Tcl use the system-wide
+    Zlib library.
+
+ -- Sergei Golovan <sgolovan@debian.org>  Thu, 29 Jul 2010 09:50:49 +0400
+
+tcl8.6 (8.6.0~b1-3) experimental; urgency=low
+
+  * Don't override CFLAGS in make call and supply it to configure script
+    as suggested by Anders Kaseorg (closes: #510153).
+
+ -- Sergei Golovan <sgolovan@debian.org>  Mon, 18 May 2009 09:35:52 +0400
+
+tcl8.6 (8.6.0~b1-2) experimental; urgency=low
+
+  * Added a compiler directive which helps to build tdbc extension
+    (closes: #510153).
+  * Don't remove tclsh alternative in case of package upgrade because the
+    manually installed alternative is also removed which isn't desirable.
+
+ -- Sergei Golovan <sgolovan@debian.org>  Sun, 01 Mar 2009 10:36:35 +0300
+
+tcl8.6 (8.6.0~b1-1) experimental; urgency=low
+
+  * New upstream beta release.
+  * Separated new TDBC package which is bundled with the Tcl distribution to
+    tcl8.6-tdbc package, and added directory /usr/lib/tcltk/tcl8.6 to the
+    list of paths where Tcl packages are searched.
+
+ -- Sergei Golovan <sgolovan@debian.org>  Sat, 27 Dec 2008 13:47:14 +0300
+
+tcl8.6 (8.6.0~a3-1) experimental; urgency=low
+
+  * New upstream alpha release.
+
+ -- Sergei Golovan <sgolovan@debian.org>  Sat, 11 Oct 2008 02:17:42 +0400
+
+tcl8.6 (8.6.0~a2-1) experimental; urgency=low
+
+  * New upstream alpha release.
+  * Restored DLL unloading for hppa and kfreebsd architectures because this
+    bug was worked around in glibc.
+
+ -- Sergei Golovan <sgolovan@debian.org>  Sat, 23 Aug 2008 12:19:37 +0400
+
+tcl8.6 (8.6.0~a1-1) experimental; urgency=low
+
+  * Initial alpha release (closes: #488653).
+
+ -- Sergei Golovan <sgolovan@debian.org>  Thu, 03 Jul 2008 21:27:33 +0400
+

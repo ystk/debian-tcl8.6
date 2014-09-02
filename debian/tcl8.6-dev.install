@@ -1,0 +1,6 @@
+usr/include
+usr/lib/*/*.a
+usr/lib/*/tcl*/*.sh
+usr/share/aclocal/*.m4
+debian/tclConfig.sh	usr/lib/tcl8.6
+debian/tclooConfig.sh	usr/lib/tcl8.6

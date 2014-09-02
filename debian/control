@@ -1,0 +1,77 @@
+Source: tcl8.6
+Section: libs
+Priority: optional
+Maintainer: Debian Tcl/Tk Packagers <pkg-tcltk-devel@lists.alioth.debian.org>
+Uploaders: Sergei Golovan <sgolovan@debian.org>
+Build-Depends: debhelper (>= 9.0.0), dpkg-dev (>= 1.16.1~), zlib1g-dev
+Standards-Version: 3.9.5
+Homepage: http://www.tcl.tk/
+
+Package: tcl8.6
+Section: interpreters
+Priority: optional
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Conflicts: tcl74 (<= 7.4p3-2)
+Suggests: tcl-tclreadline
+Multi-Arch: foreign
+Description: Tcl (the Tool Command Language) v8.6 - shell
+ Tcl is a powerful, easy to use, embeddable, cross-platform interpreted
+ scripting language.  This package contains the Tcl shell which you need
+ to run Tcl scripts.  This version includes thread support.
+
+Package: libtcl8.6
+Section: libs
+Priority: optional
+Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
+Depends: tzdata, ${shlibs:Depends}, ${misc:Depends}
+Conflicts: tcl8.6 (<< 8.6.0-2), tcl74 (<= 7.4p3-2)
+Replaces: tcl8.6 (<< 8.6.0-2)
+Suggests: tcl8.6
+Provides: libtcl
+Multi-Arch: same
+Description: Tcl (the Tool Command Language) v8.6 - run-time library files
+ Tcl is a powerful, easy to use, embeddable, cross-platform interpreted
+ scripting language.  This package contains the Tcl library and auxiliary
+ code which allows one to run Tcl-enabled applications.  This version
+ includes thread support.
+
+Package: libtcl8.6-dbg
+Section: debug
+Priority: extra
+Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
+Depends: libtcl8.6 (= ${binary:Version}), ${misc:Depends}
+Multi-Arch: same
+Description: Symbol files for libtcl8.6
+ Tcl is a powerful, easy-to-use, embeddable, cross-platform interpreted
+ scripting language.  This package contains the debug symbols for libtcl8.6,
+ to assist in debugging applications built with tcl8.6.  You will not
+ normally need to install this package.
+
+Package: tcl8.6-dev
+Section: libdevel
+Priority: optional
+Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
+Depends: dpkg-dev (>= 1.16.1~), zlib1g-dev, libtcl8.6 (= ${binary:Version}),
+ tcl8.6, ${misc:Depends}
+Suggests: tcl8.6-doc
+Multi-Arch: same
+Description: Tcl (the Tool Command Language) v8.6 - development files
+ Tcl is a powerful, easy-to-use, embeddable, cross-platform interpreted
+ scripting language.  This package contains the headers and libraries
+ needed to embed or extend Tcl.
+
+Package: tcl8.6-doc
+Section: doc
+Priority: optional
+Architecture: all
+Depends: ${misc:Depends}
+Suggests: tcl8.6
+Conflicts: tcldoc
+Provides: tcldoc
+Description: Tcl (the Tool Command Language) v8.6 - manual pages
+ Tcl is a powerful, easy-to-use, embeddable, cross-platform interpreted
+ scripting language.  This package contains the man pages for Tcl commands.
