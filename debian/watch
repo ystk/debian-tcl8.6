@@ -1,2 +1,3 @@
 version=3
-http://sf.net/tcl/tcl-core(8\.6\.\d+)-src\.tar\.gz
+opts=dversionmangle=s/\+dfsg\d*$// \
+  http://sf.net/tcl/tcl-core(8\.6\.\d+)-src\.tar\.gz

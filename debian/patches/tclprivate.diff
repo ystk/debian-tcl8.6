@@ -2,8 +2,8 @@ Patch by Chris Waters sets paths which are normally point to a directory
 with Tcl sources to a subdirectory of /usr/include/tcl8.6 (debian/rules
 puts private Tcl headers there).
 
---- tcl8.6-8.6.1.orig/unix/tclConfig.sh.in
-+++ tcl8.6-8.6.1/unix/tclConfig.sh.in
+--- a/unix/tclConfig.sh.in
++++ b/unix/tclConfig.sh.in
 @@ -100,7 +100,7 @@
  
  # String to pass to linker to pick up the Tcl library from its

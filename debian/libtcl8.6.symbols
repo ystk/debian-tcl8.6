@@ -135,6 +135,7 @@ libtcl8.6.so libtcl8.6 #MINVER#
  TclNRRunCallbacks@Base 8.6.0
  TclNeedSpace@Base 8.6.0
  TclNewProcBodyObj@Base 8.6.0
+ TclOODefineMixinObjCmd@Base 8.6.2
  TclObjBeingDeleted@Base 8.6.0
  TclObjCommandComplete@Base 8.6.0
  TclObjGetFrame@Base 8.6.0
@@ -152,6 +153,7 @@ libtcl8.6.so libtcl8.6 #MINVER#
  TclRegAbout@Base 8.6.0
  TclRegError@Base 8.6.0
  TclRegExpRangeUniChar@Base 8.6.0
+ TclRegisterLiteral@Base 8.6.2
  TclRenameCommand@Base 8.6.0
  TclResetCancellation@Base 8.6.0
  TclResetRewriteEnsemble@Base 8.6.0
@@ -164,6 +166,7 @@ libtcl8.6.so libtcl8.6 #MINVER#
  TclSetPreInitScript@Base 8.6.0
  TclSetSlaveCancelFlags@Base 8.6.0
  TclSetupEnv@Base 8.6.0
+ TclSkipUnlink@Base 8.6.2
  TclSockGetPort@Base 8.6.0
  TclSockMinimumBuffers@Base 8.6.0
  TclStackAlloc@Base 8.6.0
@@ -173,6 +176,7 @@ libtcl8.6.so libtcl8.6 #MINVER#
  TclUniCharMatch@Base 8.6.0
  TclUnixCopyFile@Base 8.6.0
  TclUnixOpenTemporaryFile@Base 8.6.0
+ TclUnixSetBlockingMode@Base 8.6.2
  TclUnixWaitForFile@Base 8.6.0
  TclUpdateReturnInfo@Base 8.6.0
  TclVarErrMsg@Base 8.6.0
@@ -832,6 +836,12 @@ libtcl8.6.so libtcl8.6 #MINVER#
  TclpGetCwd@Base 8.6.0
  TclpGetDate@Base 8.6.0
  TclpGetDefaultStdChannel@Base 8.6.0
+ TclpGetGrGid@Base 8.6.2
+ TclpGetGrNam@Base 8.6.2
+ TclpGetHostByAddr@Base 8.6.2
+ TclpGetHostByName@Base 8.6.2
+ TclpGetPwNam@Base 8.6.2
+ TclpGetPwUid@Base 8.6.2
  TclpGetSeconds@Base 8.6.0
  TclpGetTime@Base 8.6.0
  TclpGetUserHome@Base 8.6.0
@@ -840,6 +850,7 @@ libtcl8.6.so libtcl8.6 #MINVER#
  TclpInetNtoa@Base 8.6.0
  TclpLocaltime@Base 8.6.0
  TclpMakeFile@Base 8.6.0
+ TclpMakeTcpClientChannelMode@Base 8.6.2
  TclpObjAccess@Base 8.6.0
  TclpObjCopyDirectory@Base 8.6.0
  TclpObjCopyFile@Base 8.6.0
@@ -853,5 +864,6 @@ libtcl8.6.so libtcl8.6 #MINVER#
  TclpReaddir@Base 8.6.0
  TclpRealloc@Base 8.6.0
  TclpSetInitialEncodings@Base 8.6.0
+ TclpUnloadFile@Base 8.6.2
  TclpUtfNcmp2@Base 8.6.0
  _LIB_VERSION@Base 8.6.0

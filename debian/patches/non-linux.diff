@@ -1,9 +1,9 @@
 Patch by Sergei Golovan (originally by Mike Markley and Chris Waters) fixes
 building on non-linux Debian architectures.
 
---- tcl8.6-8.6.1.orig/unix/configure
-+++ tcl8.6-8.6.1/unix/configure
-@@ -6675,6 +6675,9 @@
+--- a/unix/configure
++++ b/unix/configure
+@@ -6604,6 +6604,9 @@
  		if test "`uname -s`" = "AIX" ; then
  		    tcl_cv_sys_version=AIX-`uname -v`.`uname -r`
  		fi
@@ -13,8 +13,8 @@ building on non-linux Debian architectures.
  	    fi
  	fi
  
---- tcl8.6-8.6.1.orig/unix/Makefile.in
-+++ tcl8.6-8.6.1/unix/Makefile.in
+--- a/unix/Makefile.in
++++ b/unix/Makefile.in
 @@ -179,6 +179,7 @@
  SHLIB_LD		= @SHLIB_LD@
  SHLIB_CFLAGS		= @SHLIB_CFLAGS@ -DBUILD_tcl
@@ -23,9 +23,9 @@ building on non-linux Debian architectures.
  TCL_SHLIB_LD_EXTRAS	= @TCL_SHLIB_LD_EXTRAS@
  
  SHLIB_SUFFIX		= @SHLIB_SUFFIX@
---- tcl8.6-8.6.1.orig/unix/tcl.m4
-+++ tcl8.6-8.6.1/unix/tcl.m4
-@@ -928,6 +928,9 @@
+--- a/unix/tcl.m4
++++ b/unix/tcl.m4
+@@ -926,6 +926,9 @@
  		if test "`uname -s`" = "AIX" ; then
  		    tcl_cv_sys_version=AIX-`uname -v`.`uname -r`
  		fi

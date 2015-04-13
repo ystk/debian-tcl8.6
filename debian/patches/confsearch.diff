@@ -2,8 +2,8 @@ Patch by Sergei Golovan allows to find tclConfig.sh in /usr/lib/tcl8.6
 and tkConfig.sh in /usr/lib/tk8.6 where they are located in Debian
 installation.
 
---- tcl8.6-8.6.1.orig/unix/tcl.m4
-+++ tcl8.6-8.6.1/unix/tcl.m4
+--- a/unix/tcl.m4
++++ b/unix/tcl.m4
 @@ -93,6 +93,7 @@
  			`ls -d ${prefix}/lib 2>/dev/null` \
  			`ls -d /usr/local/lib 2>/dev/null` \

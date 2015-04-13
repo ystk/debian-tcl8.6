@@ -26,6 +26,7 @@ Priority: optional
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
 Depends: tzdata, ${shlibs:Depends}, ${misc:Depends}
+Breaks: tcl8.4 (<< 8.4.20-2), tk8.4 (<< 8.4.20-2)
 Conflicts: tcl8.6 (<< 8.6.0-2), tcl74 (<= 7.4p3-2)
 Replaces: tcl8.6 (<< 8.6.0-2)
 Suggests: tcl8.6

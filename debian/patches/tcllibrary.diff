@@ -1,6 +1,6 @@
---- tcl8.6-8.6.1.orig/unix/configure
-+++ tcl8.6-8.6.1/unix/configure
-@@ -19130,7 +19130,7 @@
+--- a/unix/configure
++++ b/unix/configure
+@@ -19069,7 +19069,7 @@
  
  eval "TCL_LIB_FILE=${TCL_LIB_FILE}"
  
@@ -9,9 +9,9 @@
  PRIVATE_INCLUDE_DIR='$(includedir)'
  HTML_DIR='$(DISTDIR)/html'
  
---- tcl8.6-8.6.1.orig/unix/configure.in
-+++ tcl8.6-8.6.1/unix/configure.in
-@@ -790,7 +790,7 @@
+--- a/unix/configure.in
++++ b/unix/configure.in
+@@ -793,7 +793,7 @@
  
  eval "TCL_LIB_FILE=${TCL_LIB_FILE}"
  

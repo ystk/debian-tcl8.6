@@ -124,8 +124,16 @@ override_dh_shlibdeps:
 	dh_shlibdeps -a -ldebian/libtcl$(v)/usr/lib/$(DEB_HOST_MULTIARCH)
 
 get-orig-source:
-	wget -O tcl$(v)_$(v).1.orig.tar.gz \
-	     http://prdownloads.sourceforge.net/tcl/tcl-core$(v).1-src.tar.gz
+	CURDIR=`pwd` && \
+	TMPDIR=`mktemp -d /tmp/tcl8.6.XXXXXX` && \
+	cd $$TMPDIR && \
+	wget -O - \
+	    http://prdownloads.sourceforge.net/tcl/tcl-core$(v).2-src.tar.gz | tar -zx && \
+	for f in `find . -name *.chm` ; do \
+	    echo "REMOVING NON-FREE DOC $$f" ; rm -f $$f ; \
+	done && \
+	tar -zcf $$CURDIR/tcl$(v)_$(v).2+dfsg.orig.tar.gz tcl$(v).2 && \
+	rm -rf $$TMPDIR
 
 .PHONY: override_dh_auto_clean override_dh_auto_configure override_dh_auto_install \
 	override_dh_strip override_dh_makeshlibs override_dh_shlibdeps get-orig-source
